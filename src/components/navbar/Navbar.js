@@ -1,8 +1,13 @@
 import React from "react";
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 function Navbar() {
+  const { pathname } = useLocation();
+  console.log(pathname);
+  if (pathname.includes("*")) {
+    return <></>;
+  }
   return (
     <div className="navbar">
       <h2>Navbar</h2>
